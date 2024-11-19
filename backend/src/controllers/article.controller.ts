@@ -55,6 +55,7 @@ const updateArticleById = (
 const deleteArticleById = (req: Request<{ id: string }>, res: Response) => {
   const { userId } = req.session;
   const { id } = req.params;
+
   const response = articleModel.delete(id, userId);
   if (!response) {
     res.status(404).json({ message: "Article not found" });
