@@ -1,5 +1,5 @@
 export type Article = {
-  id: string;
+  id: string; //created by uuid
   title: string;
   content: string;
   published: boolean;

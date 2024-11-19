@@ -42,7 +42,7 @@ class ArticleModel {
     const index = this.articles.findIndex(
       (article) => article.id === id && article.userId === userId
     );
-    if (index === 1) return false;
+    if (index === -1) return false;
     this.articles.splice(index, 1);
     return true;
   }

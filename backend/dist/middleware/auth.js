@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.checkAuth = void 0;
 const checkAuth = (req, res, next) => {
     const { isAuthenticated } = req.session;
+    // console.log(req.session);
     if (isAuthenticated) {
         next();
     }

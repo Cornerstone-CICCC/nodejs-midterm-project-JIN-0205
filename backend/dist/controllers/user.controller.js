@@ -42,7 +42,12 @@ const registerUser = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         return;
     }
     const hashedPassword = yield bcrypt_1.default.hash(password, 12);
-    const user = user_model_1.default.create({ username, password: hashedPassword });
+    const user = user_model_1.default.create({
+        username,
+        password: hashedPassword,
+        message: "User created",
+    });
+    const message = { message: "User created" };
     res.status(201).json(user);
 });
 // Login
